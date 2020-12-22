@@ -8,7 +8,7 @@ public class WhichCountriesExport {
         for (CSVRecord record : parser) {
             String export = record.get("Exports");
 
-            if (export.contains("coffee")) {
+            if (export.contains(exportOfInterest)) {
                 String country = record.get("Country");
                 System.out.println(country);
             }
