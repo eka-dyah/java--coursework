@@ -32,12 +32,12 @@ public class LargestQuakes {
         if (quakeData.size() < howMany) {
             return quakeData;
         }
-
+        ArrayList<QuakeEntry> copy = new ArrayList<>(quakeData);
         ArrayList<QuakeEntry> answer = new ArrayList<>();
         while (answer.size() < howMany) {
-            int maxMagIndex = indexOfLargest(quakeData);
-            answer.add(quakeData.get(maxMagIndex));
-            quakeData.remove(maxMagIndex);
+            int maxMagIndex = indexOfLargest(copy);
+            answer.add(copy.get(maxMagIndex));
+            copy.remove(maxMagIndex);
         }
 
         return answer;
